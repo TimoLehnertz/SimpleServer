@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SimpleClient extends Thread {
 
@@ -42,9 +43,9 @@ public class SimpleClient extends Thread {
 			super.start();
 		} catch (IOException e) {
 			System.err.print("Could not Connect: " + e.getMessage());
-//			e.printStackTrace();
 		}
 	}
+	
 	
 	public void close() {
 		if(!running) return;
