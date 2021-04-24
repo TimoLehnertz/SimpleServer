@@ -56,7 +56,7 @@ public class ServerThread extends Thread {
     	}
     	if(message.type == Message.TYPE_MESSAGE) {
     		for (ReceiveListener listener : listeners) {
-        		listener.receive(message.message, new Sender());
+        		listener.receive(message.message, new Sender(this));
 			}
     	} else {
     		switch(message.type) {
@@ -108,7 +108,7 @@ public class ServerThread extends Thread {
 	
 	protected void close() {
 		System.out.println("Closing ServerThread");
-		send(Message.DISCONNECT_MESSAGE);
+//		send(Message.DISCONNECT_MESSAGE);
 		client.disconnect();
 		running = false;
 		try {
