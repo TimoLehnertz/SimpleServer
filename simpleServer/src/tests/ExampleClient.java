@@ -17,8 +17,8 @@ public class ExampleClient {
 			client.start();
 			if(client.isRunning()) {
 				System.out.println("connected succsessfully.");
-				System.out.println("	enter \"stop\" to stop the client");
-				System.out.println("	enter \"stop server\" to stop the server");
+				System.out.println("enter \"stop\" to stop the client");
+//				System.out.println("	enter \"stop server\" to stop the server");
 				client.addReceiveListener((String message, Sender sender) -> {
 					System.out.println("<< " + message);
 				});

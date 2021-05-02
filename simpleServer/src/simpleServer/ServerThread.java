@@ -79,9 +79,9 @@ public class ServerThread extends Thread {
 		send(out, new Message(msg));
 	}
 	
-	private void send(Message msg) {
-		send(out, msg);
-	}
+//	private void send(Message msg) {
+//		send(out, msg);
+//	}
 	
 	public static void send(DataOutputStream outputStream, Message message) {
 		if(outputStream == null) {
